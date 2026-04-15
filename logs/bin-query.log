@@ -1,0 +1,14 @@
+2026-03-08 20:21:38 [main] INFO  c.c.c.c.CardBinReverseApplicationTests - Starting CardBinReverseApplicationTests using Java 21.0.7 with PID 14000 (started by tzy in F:\workspace_idea\cardBin-reverse)
+2026-03-08 20:21:38 [main] INFO  c.c.c.c.CardBinReverseApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.service.BinDataLoader - Start loading BIN data from: ./bin_data.csv
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.engine.BinStorageEngine - Cache preheated with 2 records
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.engine.BinStorageEngine - Loaded 2 BIN records in 10 ms
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.service.BinDataLoader - Loaded 2 BIN records from ./bin_data.csv
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.service.BinDataLoader - Start loading LOCATION data from: bin_location.csv
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.engine.BinStorageEngine - Cache preheated with 3 records
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.engine.BinStorageEngine - Loaded 3 LOCATION records in 2 ms
+2026-03-08 20:21:40 [main] INFO  c.c.c.c.service.BinDataLoader - Loaded 3 LOCATION records from bin_location.csv
+2026-03-08 20:21:41 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-03-08 20:21:41 [main] INFO  c.c.c.c.CardBinReverseApplicationTests - Started CardBinReverseApplicationTests in 3.431 seconds (process running for 4.889)
+2026-03-08 20:21:42 [SpringApplicationShutdownHook] WARN  c.c.c.c.config.gracefulShutdown - 关闭线程池-不再接受新任务 ...
+2026-03-08 20:21:42 [SpringApplicationShutdownHook] WARN  c.c.c.c.config.gracefulShutdown - 关闭线程池 successful ...

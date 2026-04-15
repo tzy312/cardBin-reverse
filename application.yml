@@ -1,0 +1,95 @@
+server:
+  port: 8088
+  threadPool:
+    maxSise: 16
+    minSize: 8
+  tomcat:
+    max-connections: 10000
+    max-threads: 200
+    min-spare-threads: 20
+    accept-count: 100
+    connection-timeout: 2000ms
+  compression:
+    enabled: true
+    min-response-size: 10240 #响应大于10k压缩
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,text/javascript
+  servlet:
+    context-path: /tzy
+    encoding:
+      charset: utf-8
+      force: true
+
+spring:
+  application:
+    name: bin-query-service
+  
+  #
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=100000,expireAfterWrite=1h
+
+  # Redis??
+#  data:
+#    redis:
+#      host: ${REDIS_HOST:localhost}
+#      port: ${REDIS_PORT:6379}
+#      database: 0
+#      timeout: 1000ms
+#      lettuce:
+#        pool:
+#          max-active: 8
+#          max-idle: 8
+#          min-idle: 0
+#          max-wait: -1ms
+  
+  #
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health,metrics,prometheus
+    endpoint:
+      health:
+        show-details: always
+    metrics:
+      export:
+        prometheus:
+          enabled: true
+      enable:
+        jvm: true
+        system: true
+        logback: true
+      distribution:
+        percentiles-histogram:
+          http.server.requests: true
+
+# ?bin??
+app:
+  bin:
+    data:
+      file: ./bin_data.csv
+      preload: true
+  response:
+    timeout: 100
+  rate-limit:
+    enabled: true
+    global-limit: 10000
+    ip-limit: 100
+    window-seconds: 1
+card:
+  bin:
+    lengths: 5,6,7,8
+
+logging:
+  level:
+    com.cn.cardbin.cardbinreverse.service.BinQueryService: INFO
+  file:
+    name: logs/bin-query.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 30

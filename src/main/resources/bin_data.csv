@@ -1,0 +1,3 @@
+prefix,issuer,cardType,country,province,city,locationCode,locationCodeLength
+623088,成都农商行,借记卡,中国,四川省,成都市,7,2
+622848,农业银行,借记卡,中国,,,7,3
