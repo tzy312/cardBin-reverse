@@ -8,7 +8,6 @@ class CardBinReverseApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("hello");
     }
 
 }
